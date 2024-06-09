@@ -1,0 +1,13 @@
+<?php 
+
+include 'connection.php';
+$kdBarang        = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+$r_kdBarang      = $connection->real_escape_string($id);
+$query      = mysqli_query($koneksi, "DELETE FROM produk WHERE kodeBarang = '" . $kdBarang . "'");
+
+echo "<script>
+alert('Berhasil menghapus dosen')
+document.location = 'index.php'
+</script>";
+
+?>
